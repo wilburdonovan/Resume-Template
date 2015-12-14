@@ -212,3 +212,48 @@ span {
     display: block;
   }
 }
+
+.project-entry:hover {
+  color: #544648;
+  background-color: #f5ae23;
+}
+
+.contact-entry:hover {
+  background-color: #000000;
+  color: #000000;
+}
+
+.contact-entry {
+  margin-top: 0;
+  margin-bottom: 0;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+#hr1 {
+  margin-bottom: 0px;
+  margin-top: 20px;
+  padding-bottom: 0px;
+  padding-top: 0px;
+}
+
+#hr2 {
+  margin-bottom: 20px;
+  margin-top: 0px;
+  padding-bottom: 0px;
+  padding-top: 0px;
+}
+
+#footerContacts {
+  padding: 0% 5%;
+}
+
+.education-entry {
+  padding-top: 10px;
+
+}
+
+.format-school {
+  text-align: left;
+  padding-top: 7px;
+}
