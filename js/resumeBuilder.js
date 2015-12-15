@@ -1,5 +1,5 @@
 // THE ME OBJECT
-var me = {
+var bio = {
   "firstName": "Wilbur",
   "lastName": "Donovan",
   "age": 24,
@@ -14,7 +14,7 @@ var me = {
   "role": "Computer Science Student",
   "skills": ["Front End Web Development", "Object-oriented programming", "Software Development", "Business Analysis"],
   "greeting": "Welcome to my portfolio. Please feel free to have a look at my work.",
-  "myPic": "images/fry.jpg",
+  "bioPic": "images/fry.jpg",
   "displayHeader": function () {
     var headStr = "";
     headStr += "<h1 class='name'>" + this.firstName + ' ' + this.lastName + "</h1> ";
@@ -23,9 +23,18 @@ var me = {
       headStr += "<div class='col-md-2 contact-entry'><span class='flex-item orange-text'>" + i + '</span>: ' + "<span class='flex-item white-text'>" + this.contact[i] + "</span></div>";
     }
     headStr += "<div class='col-md-12'><hr id='hr2'/></div>";
-    headStr += "<div class='col-md-3'><img src='" + this.myPic + "' alt='A pic of me' class='biopic'/></div>"
+    headStr += "<div class='col-md-3'><img src='" + this.bioPic + "' alt='A pic of me' class='biopic'/></div>"
     headStr += "<div class='col-md-9 welcome-message'>" + this.greeting + "</div>";
     $('#header').prepend(headStr);
+    // Post Skills to WebPage
+    if (this.skills != undefined) {
+      $("#header").append(HTMLskillsStart);
+      var skillsStr = '';
+      for (var i = 0; i < this.skills.length; i++) {
+        skillsStr += "<li class='flex-item'><span class='white-text'>" + this.skills[i] + "</span></li>";
+      }
+    $("#skills").html(skillsStr);
+    }
   },
   "displayFooter": function () {
     var footStr = '';
@@ -60,7 +69,8 @@ var education = {
     {
       "qualification": "Front-End Web Development Nanodegree",
       "institution": "Udacity.com",
-      "completion": "2016"
+      "completion": "2016",
+      "location": "Sydney, Australia"
     }
   ],
   "displayEd": function () {
@@ -136,15 +146,7 @@ var projects = {
   }
 };
 
-// Post Skills to WebPage
-if (me.skills != undefined) {
-  $("#header").append(HTMLskillsStart);
-  var skillsStr = '';
-  for (var i = 0; i < me.skills.length; i++) {
-    skillsStr += "<li class='flex-item'><span class='white-text'>" + me.skills[i] + "</span></li>";
-  }
-  $("#skills").html(skillsStr);
-}
+
 
 // Post Work Data to WebPage
 work.display = function () {
@@ -184,8 +186,8 @@ $('#intButton').on('click', function () {
 
 // Updating display
 projects.display();
-me.displayHeader();
-me.displayFooter();
+bio.displayHeader();
+bio.displayFooter();
 education.displayEd();
 work.display();
 
