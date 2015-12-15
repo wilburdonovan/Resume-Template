@@ -114,17 +114,17 @@ var projects = {
         "title": "Fake1",
         "dates": "2016-2017",
         "description": "fake project 1",
-        "images": "images/holder.gif"
+        "images": ["images/holder.gif"]
     }, {
         "title": "Fake2",
         "dates": "2014-2016",
         "description": "fake project 2",
-        "images": "images/holder.gif"
+        "images": ["images/holder.gif"]
     }, {
         "title": "Fake3",
         "dates": "2015-2016",
         "description": "fake project 3",
-        "images": "images/holder.gif"
+        "images": ["images/holder.gif"]
     }],
     "display": function() {
         var projectStr = '';
@@ -133,7 +133,7 @@ var projects = {
             projectStr += '<a href="#">' + this.projects[i].title + '</a>';
             projectStr += '<div class="date-text">' + this.projects[i].dates + '</div>';
             projectStr += '<p><br>' + this.projects[i].description + '</p>';
-            projectStr += '<img src="' + this.projects[i].images + '">';
+            projectStr += '<img src="' + this.projects[i].images[0] + '">';
             projectStr += '</div>';
         }
         $("#projects").append(projectStr);
