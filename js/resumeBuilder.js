@@ -73,12 +73,9 @@ var education = {
         "url": "www.usq.edu.au"
     }],
     "onlineCourses": [{
-        "title": "Waste of time"
-    }, {
-        "school": "Waste of time"
-    }, {
-        "date": 2015
-    }, {
+        "title": "Waste of time",
+        "school": "Waste of time",
+        "date": 2015,
         "url": "Waste of time"
     }],
     "display": function() {
